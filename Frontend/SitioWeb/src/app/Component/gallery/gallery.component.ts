@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {Gallery} from 'angular-gallery';
 @Component({
   selector: 'app-gallery',
@@ -7,7 +8,7 @@ import {Gallery} from 'angular-gallery';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor(private galeria: Gallery) { }
+  constructor(private galeria: Gallery, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,12 @@ export class GalleryComponent implements OnInit {
       index
     };
     this.galeria.load(prop);
+  }
+  sitio(num:number){
+    if(num==1)
+    {this.router.navigate['/Nuestras-Casas']}
+
+
   }
 
 }
